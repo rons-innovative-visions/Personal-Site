@@ -38,6 +38,7 @@
 /* ----- Styles ----- */
 body{
     /* height: 300vh; */
+    overflow-x: hidden;
     max-width: 100vw;
 }
 
@@ -112,7 +113,7 @@ section{
     --scroll: 0;
 }
 
-#banner, #about{
+#banner, #about, #skills{
     font-family: 'Belanosima', sans-serif;
     background-repeat: no-repeat;
     background-size: cover;
@@ -130,7 +131,7 @@ section{
 }
 #banner .background-img, #about .background-img{
     background-image: url("../images/banner/banner.png");
-    opacity: calc(1 - var(--scroll) / 150);
+    opacity: calc(1 - var(--scroll) / 100);
 }
 #banner .right{
     position: sticky;
@@ -186,11 +187,11 @@ section{
 #about {
     display: block;
 }
-#about .second-background-img, #skills .background-img{
+#about .second-background-img, #skills .background-img, #banner .second-background-img{
     background-image: url("../images/back.png");
 }
-#about .second-background-img, #skills .background-img{
-    opacity: calc(-1 + var(--scroll) / 100);
+#banner .second-background-img, #about .second-background-img, #skills .background-img{
+    opacity: 0;
 }
 #about .overlay-img{
     height: 100%;
@@ -255,6 +256,7 @@ section{
     opacity: calc((0 + var(--scroll) / 100));
 }
 #about .img2-text{
+    position: relative;
     grid-column: 5 / span 2;
     opacity: calc((0 + var(--scroll) / 200));
 }
@@ -277,20 +279,88 @@ section{
     width: 100%;
 }
 #skills{
-    
+    display: block;
 }
 #skills .background-img{
-    /* opacity: calc(3 - var(--scroll) / 150); */
+    /* opacity: calc(4 - var(--scroll) / 100); */
 }
-
 #skills .overlay-img img{
     position: sticky;
     width: 100%;
 }
+#skills h2{
+    position: relative;
+    display: block;
+    color: #fff;
+    font-size: 6rem;
+    text-align: end;
+    padding: 5rem 8rem 0 0;
+}
+#skills .content{
+    display: grid;
+    grid-template-columns: auto;
+    /* grid-template-rows: 6.6% 6.6% 6.6% 6.6% 6.6% 6.6% 6.6% 6.6% 6.6% 6.6% 6.6% 6.6% 6.6% auto; */
+    gap: 1rem;
+    padding-top: 2rem;
+}
+#skills .content .skill{
+    text-align: end;
+    position: relative;
+}
+#skills .content #mongodb, #skills .content #nodejs{
+    text-align: start;
+}
+#skills .content .skill h3{
+    font-size: 5rem;
+    display: inline-block;
+}
+#skills .content .skill img{
+    margin-bottom: 2.5rem;
+}
+#skills .content .skill p{
+    position: relative;
+    bottom: 1.8rem;
+    /* width: 80%; */
+    font-size: 1.6rem;
+}
+#skills .content #html{
+    /* grid-column: 8 / span 2; */
+    grid-area: 1 / 10 / span 3 / span 5;
+    margin-right: 2rem;
+}
+#skills .content #css{
+    /* grid-column: 7 / span 2; */
+    grid-area: 4 / 9 / span 3 / span 4;
+}
+#skills .content #js{
+    /* grid-column: 6 / span 2; */
+    grid-area: 7 / 8 / span 3 / span 3;
+}
+#skills .content #mongodb{
+    grid-area: 2 / 7 / span 3 / span 3;
+    /* grid-column: 4 / span 2; */
+}
+#skills .content #nodejs{
+    /* grid-column: 7 / span 2; */
+    grid-area: 5 / 6 / span 3 / span 3;
+}
+/* #skills .right{
+    display: grid;
+    grid-template-rows: 20%;
+}
+#skills .left{
+    display: grid;
+    grid-template-rows: 20%;
+}
+#skills .left .skill:nth-child(1){
+    grid-row: 2 / span 2;
+}
+#skills .left .skill:nth-child(2){
+    grid-row: 4 / span 2;
+} */
 
 @media  only screen and (max-width: 1401px)  {
     #banner{
-        opacity: 1 !important;
         display: block;
     }
     #banner .left{
@@ -308,6 +378,9 @@ section{
     }
 }
 @media  only screen and (max-width: 1001px)  {
+    *{
+        opacity: 1 !important;
+    }
     #about .content{
         display: block;
     }   
@@ -321,6 +394,15 @@ section{
         display: inline !important;
         max-height: 100%;
     }    
+    
+    #skills h2{
+        text-align: center;
+        padding: 0;
+    }
+    #skills .content{
+        display: block;
+        padding-top: 2rem;
+    }
 }
 @media only screen and (max-width: 991px) {
     #banner{
@@ -348,10 +430,15 @@ section{
 
     #about h2{
         padding-left: 0;
+        text-align: center;
+        font-size: 4rem;
     }
     #about .content h3{
         font-size: 3rem;
     }    
+    #about .instagram-media{
+        height: 20rem !important;
+    }
 }
 @media only screen and (max-width: 400px) {
     #banner img{
