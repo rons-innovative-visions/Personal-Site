@@ -43,12 +43,32 @@ body{
 }
 
 section{
-    min-height: 100vh;
-    height: 100vh;
+    /* min-height: 100vh;
+    height: 100vh; */
     color: #000;
     text-align: center;
 }
 
+#banner .background-img, #about .transition-from-img{
+    background-image: url("../images/banner/banner.png");
+    opacity: calc(1.5 - var(--scroll) / 100);
+}
+
+#about .background-img, #banner .transition-to-img, #skills .transition-from-img{
+    background-image: url("../images/about/background.png");
+}
+
+#skills .background-img, #about .transition-to-img, #contact .transition-from-img{
+    background-image: url("../images/skills/background.png");
+}
+
+#contact .background-img, #skills .transition-to-img{
+    background-image: url("../images/contact/background.png");
+}
+
+#banner .transition-to-img, #about .background-img, #about .transition-to-img, #skills .transition-from-img, #skills .background-img{
+    opacity: 0;
+}
 
 .background-img, .transition-from-img, .transition-to-img{
     width: 100%;
@@ -56,23 +76,11 @@ section{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-}
-
-#banner .background-img, #about .transition-from-img{
-    background-image: url("../images/banner/banner.png");
-    opacity: calc(1 - var(--scroll) / 100);
-}
-
-#about .background-img, #skills .transition-from-img, #banner .transition-to-background-img{
-    background-image: url("../images/back.png");
-}
-
-#banner .transition-to-background-img, #about .background-img, #skills .transition-from-img{
     opacity: 0;
 }
 
-#skills .background-img{
-    background: url("../images/skills/background.jpg");
+#banner .overlay-img img, #about .overlay-img img, #about .overlay-img2 img, #skills .overlay-img img, #contact .overlay-img img{
+    width: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -160,20 +168,12 @@ section{
 #banner .left{
     position: sticky;
     padding: 20rem 6rem;
-    display: grid;
-    grid-template-rows: 14% 30%;
     text-align: left;
 }
 #banner .overlay-img{
-    height: 100%;
     position: absolute;
     right: 0;
-    opacity: calc(1 - var(--scroll) / 150);
-}
-#banner .overlay-img img{
-    height: 100%;
-    width: 100%;
-    background-attachment: fixed;
+    /* opacity: calc(1 - var(--scroll) / 150); */
 }
 #banner h1{
     text-transform: capitalize;
@@ -205,16 +205,9 @@ section{
     display: block;
 }
 #about .overlay-img{
-    height: 100%;
     position: absolute;
     right: 0;
-    opacity: calc(1 - var(--scroll) / 150);
-}
-#about .overlay-img img{
-    height: 100%;
-    width: 100%;
-    filter: brightness(.9);
-    background-attachment: fixed;
+    /* opacity: calc(1 - var(--scroll) / 150); */
 }
 #about h2{
     position: relative;
@@ -283,16 +276,12 @@ section{
 #about .content .img2-text h3, #about .content .img2-text p{
     opacity: calc(2 - var(--scroll) / 140);
 }
-#banner .overlay-img img, #about .overlay-img img, #about .overlay-img2 img, #skills .overlay-img, #contact .overlay-img img{
-    width: 100%;
-}
 
 #skills{
     display: block;
 }
 #skills .overlay-img img{
     position: sticky;
-    width: 100%;
 }
 #skills h2{
     position: relative;
@@ -351,10 +340,9 @@ section{
     grid-area: 5 / 6 / span 3 / span 3;
 }
 
-
-#contact .background-img{
-    /* background-image: url("../images/contact/background.png"); */
-}
+/* .overlay-img{
+    opacity: .8;
+} */
 
 @media  only screen and (max-width: 1401px)  {
     #banner{
@@ -375,7 +363,7 @@ section{
     }
 }
 @media  only screen and (max-width: 1001px)  {
-    *{
+    .content *{
         opacity: 1 !important;
     }
     #about .content{
