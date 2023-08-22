@@ -53,18 +53,18 @@ function setScrollVar() {
     //     // alert()
     // }
 
-    if(parseInt($("#skills h2").css("height")) + parseInt($("#skills .content").css("height")) > parseInt($("#skills .overlay-img img").css("height"))){
-        $("#skills").css("height", parseInt($("#skills h2").css("height")) + parseInt($("#skills .content").css("height")));
-        $("#skills .overlay-img img").css("height", $("#skills").css("height"));
-        $("#skills .background-img").css("height",  $("#skills").css("height"));
-        $("#skills .transition-from-img").css("height",  $("#skills").css("height"));
-        $("#skills .transition-to-img").css("height",  $("#skills").css("height"));
-    } else{
-        $("#skills").css("height", $("#skills .overlay-img img").css("height"));
-        $("#skills .background-img").css("height",  $("#skills").css("height"));
-        $("#skills .transition-from-img").css("height",  $("#skills").css("height"));
-        $("#skills .transition-to-img").css("height",  $("#skills").css("height"));
-    }
+    // if(parseInt($("#skills h2").css("height")) + parseInt($("#skills .content").css("height")) > parseInt($("#skills .overlay-img img").css("height"))){
+    //     $("#skills").css("height", parseInt($("#skills h2").css("height")) + parseInt($("#skills .content").css("height")));
+    //     $("#skills .overlay-img img").css("height", $("#skills").css("height"));
+    //     $("#skills .background-img").css("height",  $("#skills").css("height"));
+    //     $("#skills .transition-from-img").css("height",  $("#skills").css("height"));
+    //     $("#skills .transition-to-img").css("height",  $("#skills").css("height"));
+    // } else{
+    //     $("#skills").css("height", $("#skills .overlay-img img").css("height"));
+    //     $("#skills .background-img").css("height",  $("#skills").css("height"));
+    //     $("#skills .transition-from-img").css("height",  $("#skills").css("height"));
+    //     $("#skills .transition-to-img").css("height",  $("#skills").css("height"));
+    // }
 }
 setScrollVar();
 // $("#banner").css("height", $("#banner .overlay-img img").css("height"));
@@ -86,9 +86,25 @@ $("#about .overlay-img img").css("height", $("#about").css("height")); //
 $("#about .background-img").css("height", parseInt($("#about h2").css("height")) + parseInt($("#about .content").css("height")));
 $("#about .transition-to-img").css("height", parseInt($("#about h2").css("height")) + parseInt($("#about .content").css("height")));
 
+
+parseInt($("#skills h2").css("height")) + parseInt($("#skills .content").css("height")) > parseInt($("#skills .overlay-img img").css("height")) ? $("#skills").css("height", parseInt($("#skills h2").css("height")) + parseInt($("#skills .content").css("height"))) : $("#skills").css("height", $("#skills .overlay-img img").css("height"));
+$("#skills .background-img").css("height",  $("#skills").css("height"));
+$("#skills .transition-from-img").css("height",  $("#skills").css("height"));
+$("#skills .transition-to-img").css("height",  $("#skills").css("height"));
+$("#contact .transition-to-img").css("height",  $("#skills").css("height"));
 // parseInt($("#about h2").css("height")) + parseInt($("#about .content").css("height")
 
-$("#contact").css("height", $("#contact .overlay-img img").css("height"));
-// $("#contact .overlay-img img").css("height", $("#contact").css("height"));
-$("#contact .transition-from-img").css("height", $("#contact").css("height"));
+// parseInt($("#contact h2").css("height")) + parseInt($("#contact .content").css("height")) > parseInt($("#skills").css("height")) ? $("#contact").css("height", parseInt($("#contact h2").css("height")) + parseInt($("#contact .content").css("height"))) : $("#contact").css("height", parseInt($("#skills").css("height")));
+// let interval = setInterval(() => {
+//     if($("#contact .eapps-widget").css("height")) {
+//         window.innerWidth <= 1000 ? $("#contact").css("height", parseInt($("#contact h2").css("height")) + parseInt($("#contact .content").css("height"))): $("#contact").css("height", parseInt($("#skills").css("height")));
+//         $("#contact .background-img").css("height", $("#contact").css("height"));
+//         $("#contact .transition-from-img").css("height", $("#contact").css("height"));
+//         console.log(parseInt($("#contact .content").css("height")));
+//         console.log(parseInt($("#contact h2").css("height")));
+//         clearInterval(interval)
+//     }
+// }, 100)
+$("#contact").css("height", parseInt($("#skills").css("height")));
 $("#contact .background-img").css("height", $("#contact").css("height"));
+$("#contact .transition-from-img").css("height", $("#contact").css("height"));

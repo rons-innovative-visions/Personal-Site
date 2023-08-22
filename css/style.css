@@ -268,7 +268,7 @@ section{
     font-size: 4rem;
 }
 #about .content p{
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 }
 #about .content .img1-text h3, #about .content .img1-text p{
     opacity: calc(2 - var(--scroll) / 100);
@@ -340,9 +340,61 @@ section{
     grid-area: 5 / 6 / span 3 / span 3;
 }
 
-/* .overlay-img{
-    opacity: .8;
+#contact{
+    
+}
+
+#contact h2{
+    color: #fff;
+    position: relative;
+    display: block;
+    color: #fff;
+    text-align: start;
+    font-size: 6rem;
+    padding: 16rem 0 0 10rem;
+}
+
+#contact .content{
+    display: grid;
+    grid-template-columns: auto auto;
+    position: relative;
+    text-align: start;
+    color: #fff;
+    font-size: 2rem;
+    padding: 4rem 10rem 0 0;
+}
+
+#contact .contacts{
+    padding: 3rem 0 0 10rem;
+}
+#contact .content .contact{
+    margin: 1rem;
+}
+
+#contact .content .contact img{
+    margin-bottom: 1rem;
+}
+
+#contact .content  .contact a{
+    color: #fff;
+    font-size: 3rem;
+}
+
+.FVcOv {
+    max-width: none !important;
+}
+
+/* .Content__WidgetContainer-sc-3sh3bs-2, div.eapps-widget.eapps-widget-show-toolbar:before{
+    display: inline-block !important;
 } */
+/* document.querySelector(".eapps-instagram-feed-posts-item-image-landscape"){ */
+/* .eapps-instagram-feed-posts-item-image-landscape {
+    display: none !important;
+}
+
+/* .eapps-instagram-feed-container{
+    height: 50rem;
+} */ 
 
 @media  only screen and (max-width: 1401px)  {
     #banner{
@@ -363,7 +415,7 @@ section{
     }
 }
 @media  only screen and (max-width: 1001px)  {
-    .content *{
+    .content *, #banner .left h1, #banner .left h2, #about h2{
         opacity: 1 !important;
     }
     #about .content{
@@ -387,6 +439,23 @@ section{
     #skills .content{
         display: block;
         padding-top: 2rem;
+    }
+
+    #contact h2 {
+        padding: 5rem 0 2.5rem 0;
+    }
+    #contact .content{
+        display: block;
+    }
+    #contact .contact{
+        display: inline-block;
+        text-align: center;
+    }
+    #contact .content, #contact .contacts{
+        padding: 0;
+    }
+    #contact .eapps-widget{
+        padding: 2rem 2rem 0 2rem;
     }
 }
 @media only screen and (max-width: 991px) {
@@ -414,9 +483,9 @@ section{
     }
 
     #about h2{
-        padding-left: 0;
         text-align: center;
         font-size: 4rem;
+        padding-left: 0;
     }
     #about .content h3{
         font-size: 3rem;

@@ -17,3 +17,6 @@
 //     }
 //     $(el).css("opacity", "1");
 // });
+$(window).on( "load", () => {
+    $("[href='https://elfsight.com/online-form-builder/?utm_source=websites&utm_medium=clients&utm_content=form-builder&utm_term=127.0.0.1&utm_campaign=free-widget']").remove();
+} );
