@@ -6,7 +6,6 @@
         <title>Personal Site</title>
         <link rel="stylesheet" href="css/style.css">
         <script src="js/index.js" defer></script>
-        <script src="js/main.js" defer></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     </head>
@@ -15,23 +14,23 @@
             <nav class="navbar navbar-expand-lg d-flex fixed-top user-select-none" data-bs-theme="dark">
                 <div class="container-fluid">
                   <a class="navbar-brand" href="index.html">Personal Site</a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
-                  <div class="collapse navbar-collapse" id="navbarColor01">
+                  <div class="collapse navbar-collapse" id="navbar">
                     <div class="left-side me-auto">
                       <ul class="navbar-nav mb-lg-0">
                         <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                          <a class="nav-link active" href="#banner">Home</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="About.html">About</a>
+                          <a class="nav-link" href="l#about">About</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="Work.html">Work</a>
+                          <a class="nav-link" href="#skills">Skills</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="Contact.html">Contact</a>
+                          <a class="nav-link" href="#contact">Contact</a>
                         </li>
                       </ul>
                     </div>
@@ -47,113 +46,115 @@
                 </div>
               </nav>
         </header>
-        <main>
+        <main data-bs-spy="scroll" data-bs-target="#navbar" data-bs-smooth-scroll="true">
           <section id="banner">
-            <div class="background-img position-absolute w-100"></div>
+            <div class="blur-load background-blur position-absolute w-100" style="background-image: url(./images/banner/background-small.png);">
+              <div class="background-img w-100 h-100"></div>
+            </div>
             <div class="transition-to-img position-absolute w-100"></div>
-            <div class="overlay-img w-100">
-              <img class="d-none d-xxl-block" src="images/banner/banner-me.png" alt="...">
+            <div class="overlay-img position-relative w-100">
+              <img loading="lazy" class="d-none d-xxl-block" src="images/banner/overlay.png" alt="...">
             </div>
-            <div class="left">
-              <img class="rounded-circle d-xxl-none" src="/images/me.png" alt="...">
-              <h2>Hey, It's Me</h2>
-              <h1>Ron<span class="d-none d-lg-inline">s_innovative_visions</span></h1>
-              <div class="d-none d-lg-inline">
-                <p class="skills">A Web Developer Web Designer Content Creator</p>
-                <p>Who's always looking for new opportunities to grow as a developer, and most importantly, as a person.</p>
+            <div class="content">
+              <div class="left">
+                <div class="me-img blur-load rounded-circle d-inline-block d-xxl-none" style="background-image: url(./images/banner/me-small.png);
+                ">
+                  <img loading="lazy" class="rounded-circle" src="/images/banner/me.jpg" alt="...">
+                </div>
+                <h2>Hey, It's Me</h2>
+                <h1>Ron<span class="d-none d-lg-inline">s_innovative_visions</span></h1>
+                <div class="d-none d-lg-inline">
+                  <p class="skills">A Web Developer Web Designer Content Creator</p>
+                  <p>Who's always looking for new opportunities to grow as a developer, and most importantly, as a person.</p>
+                </div>
               </div>
-            </div>
-            <div class="right d-none d-xxl-block">
-              <h2>& That's Me!</h2>
+              <div class="right d-none d-xxl-block">
+                <h2>& That's Me!</h2>
+              </div>
             </div>
           </section>
           <section id="about">
-            <div class="transition-from-img position-absolute w-100"></div>
+            <div class="blur-load transition-from-blur position-absolute w-100" style="background-image: url(./images/banner/background-small.png);">
+              <div class="transition-from-img w-100"></div>
+            </div>
             <div class="background-img position-absolute w-100"></div>
             <div class="transition-to-img position-absolute w-100"></div>
-            <div class="overlay-img w-100">
-              <img class="d-none d-xxl-block" src="images/banner-transition.png" alt="...">
+            <div class="overlay-img">
+              <img loading="lazy" class="d-none d-xxl-block" src="images/about/overlay.png" alt="...">
             </div>
-            <!-- <div class="overlay-img2 position-absolute">
-              <img class="d-none d-xxl-block" src="3.png" alt="...">
-            </div> -->
             <h2>About Me</h2>
-            <div class="content pb-5">
-              <a class="img1-link" href="https://www.youtube.com/@webdebwithron?sub_confirmation=1" target="_blank">
-                <img class="img1" src="images/YT-Wide_rounded.png" alt="..." href="https://www.youtube.com/channel/UCbDWhtql3wIiI8fIKur9DjA">
-              </a>
-              <div class="img1-text">
-                <h3 class="img1-title">YouTube Channel</h3>
-                <p>I started my YouTube channel to merge my love for video creation with my passion for programming, aiming to create an inclusive and supportive platform where I could share my knowledge, and empower others to embark on their programming journey. By building a community of like-minded individuals eager to learn and grow together, Through this channel, I aimed to leave a positive impact, to help individuals to harness the limitless possibilities of programming and explore their creativity to their fullest potential</p>
-              </div>
-              <div class="img2-link">
-                <blockquote style = 'width:calc(100% - 5%); height: 30rem;' class='instagram-media' data-instgrm-version='14'>
-                  <a href='https://www.instagram.com/p/Cu25wTFLq6x/' ></a>
-                </blockquote>
-              </div>
-              <script src="//www.instagram.com/embed.js"></script>
-              <div class="img2-text">
-                <h3 class="img2-title">Instagram</h3>
-                <p>After i created my YouTube channel, I decided to join the world of Instagram to display my creative work, skills, and breathtaking drone footage, offering a captivating glimpse into the beautiful places I explore. Though my account is recent, I'm excited to share my passion and projects with the world, promising a feed filled with art, skill, and boundless imagination for all to enjoy. Join me on this exciting journey, as we embark together on a visual adventure through creativity and inspiration.</p>
-              </div>
-            </div> 
+              <div class="content pb-5">
+                <a class="img1-link" href="https://www.youtube.com/@webdebwithron?sub_confirmation=1" target="_blank">
+                  <img loading="lazy" class="img1" src="images/about/YT-Wide_rounded.png" alt="..." href="https://www.youtube.com/channel/UCbDWhtql3wIiI8fIKur9DjA">
+                </a>
+                <div class="img1-text">
+                  <h3 class="img1-title">YouTube Channel</h3>
+                  <p>I started my YouTube channel to merge my love for video creation with my passion for programming, aiming to create an inclusive and supportive platform where I could share my knowledge, and empower others to embark on their programming journey. By building a community of like-minded individuals eager to learn and grow together, Through this channel, I aimed to leave a positive impact, to help individuals to harness the limitless possibilities of programming and explore their creativity to their fullest potential</p>
+                </div>
+                <div class="img2-link">
+                  <blockquote style = 'width:calc(100% - 5%); height: 30rem;' class='instagram-media' data-instgrm-version='14'>
+                    <a href='https://www.instagram.com/p/Cu25wTFLq6x/' ></a>
+                  </blockquote>
+                </div>
+                <script src="//www.instagram.com/embed.js"></script>
+                <div class="img2-text">
+                  <h3 class="img2-title">Instagram</h3>
+                  <p>After i created my YouTube channel, I decided to join the world of Instagram to display my creative work, skills, and breathtaking drone footage, offering a captivating glimpse into the beautiful places I explore. Though my account is recent, I'm excited to share my passion and projects with the world, promising a feed filled with art, skill, and boundless imagination for all to enjoy. Join me on this exciting journey, as we embark together on a visual adventure through creativity and inspiration.</p>
+                </div>
+              </div> 
           </section>
           <section id="skills">
             <div class="transition-from-img w-100 position-absolute"></div>
             <div class="background-img w-100 position-absolute"></div>
             <div class="transition-to-img w-100 position-absolute"></div>
-            <div class="overlay-img position-absolute">
-              <img class="d-none d-xxl-block" src="4.png" alt="...">
+            <div class="overlay-img position-absolute w-100">
+              <img loading="lazy" class="d-none d-xxl-block" src="./images/skills/overlay.png" alt="...">
             </div>
             <h2>My Skills</h2>
             <div class="content">
               <div id="html" class="skill">
                 <h3>HTML</h3>
-                <img src="./images/skills/html.png" alt="..." width="74">
+                <img loading="lazy" src="./images/skills/html.png" alt="..." width="74">
                 <p>HTML (Hypertext Markup Language) is a markup language used for creating and structuring content on the web, using a system of tags to define elements and their relationships.</p>
               </div>
               <div id="css" class="skill">
                 <h3>CSS</h3>
-                <img src="./images/skills/css.png" alt="..." width="74">
+                <img loading="lazy" src="./images/skills/css.png" alt="..." width="74">
                 <p>CSS (Cascading Style Sheets) is a language used for describing the design, formatting, and layout of web documents, enabling the separation of content from presentation.</p>
               </div>
               <div id="js" class="skill">
                 <h3>JavaScript</h3>
-                <img src="./images/skills/js.png" alt="..." width="74">
+                <img loading="lazy" src="./images/skills/js.png" alt="..." width="74">
                 <p>JavaScript (JS) is a versatile programming language that enables interactive and dynamic behavior on websites, allowing for client-side scripting and manipulation of web page elements.</p>
               </div>
               <div id="mongodb" class="skill">
                 <h3><span class="d-none d-xxl-inline-block">MongoDB/</span>SQL</h3>
-                <img class="rounded-circle" src="images/skills/mongodb.png" alt="..." width="74">
+                <img loading="lazy" class="rounded-circle" src="./images/skills/mongodb.png" alt="..." width="74">
                 <p>SQL (Structured Query Language) is a domain-specific language for managing and manipulating relational databases, facilitating tasks such as querying, updating, and maintaining data.</p>
               </div>
               <div id="nodejs" class="skill">
                 <h3><span class="d-none d-xxl-inline-block">Node.j/</span>BackEnd</h3>
-                <img src="images/skills/nodejs.png" alt="..." width="74">
+                <img loading="lazy" src="./images/skills/nodejs.png" alt="..." width="74">
                 <p>Server-side of a software application or website, encompassing the server, database, and logic that work together to process and deliver data to the front end..</p>
               </div>
             </div>
           </section>
           <section id="contact">
+            <div class="transition-from-from-img w-100 position-absolute"></div>
             <div class="transition-from-img w-100 position-absolute"></div>
             <div class="background-img w-100 position-absolute"></div>
-            <div class="overlay-img position-absolute">
-              <img class="d-none d-xxl-block" src="5.png" alt="...">
+            <div class="overlay-img position-absolute w-100">
+              <img loading="lazy" class="d-none d-xxl-block" src="./images/contact/overlay.png" alt="...">
             </div>
             <h2>My Socials</h2>
             <div class="content">
               <div class="contacts d-inline-block">
-                <div class="contact"><img class="rounded" src="https://images.crunchbase.com/image/upload/t_cb-default-original/eeq5ozmnpex2kgl1wfzt" alt="" width="64"> <a href="https://linktr.ee/rons_innovative_visions" target="_blank">LinkTree</a></div>
-                <div class="contact"><img src="https://cdn-icons-png.flaticon.com/64/174/174883.png" alt=""> <a href="https://www.youtube.com/@webdebwithron?sub_confirmation=1" target="_blank">YouTube</a></div>
-                <div class="contact"><img src="https://cdn-icons-png.flaticon.com/64/2111/2111463.png" alt="" target="_blank"> <a href="https://www.instagram.com/rons_innovative_visions/" target="_blank">Instagram</a></div>
-                <div class="contact"><img src="https://cdn-icons-png.flaticon.com/64/3670/3670157.png" alt="" target="_blank"> <a href="https://discord.com/users/1129122136473227385#3644" target="_blank">Discord</a></div>
+                <div class="contact"><img loading="lazy" class="rounded" src="./images/contact/linktree-icon.jpg" alt="..." width="64"> <a href="https://linktr.ee/rons_innovative_visions" target="_blank">LinkTree</a></div>
+                <div class="contact"><img loading="lazy" src="./images/contact/youtube-icon.png" alt="..." width="64"> <a href="https://www.youtube.com/@webdebwithron?sub_confirmation=1" target="_blank">YouTube</a></div>
+                <div class="contact"><img loading="lazy" src="./images/contact/instagram-icon.png" alt="..." target="_blank" width="64"> <a href="https://www.instagram.com/rons_innovative_visions/" target="_blank">Instagram</a></div>
+                <div class="contact"><img loading="lazy" src="./images/contact/discord-icon.png" alt="..." target="_blank" width="64"> <a href="https://discord.com/users/1129122136473227385#3644" target="_blank">Discord</a></div>
               </div>
-              <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-              <div class="elfsight-app-d346f145-d341-43f8-b1b2-81b52fdf0b7a"></div>
             </div>
-              <!-- <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script> -->
-              <!-- <div class="elfsight-app-02183f1f-f706-4670-be7d-65e36662c5f5"></div> -->
-<!-- <iframe class="" src="https://widget-02183f1ff7064670be7d65e36662c5f5.elfsig.ht" frameborder="0"></iframe> -->
             </div>
           </section>
         </main>

@@ -3,6 +3,25 @@
     /* font-family: 'Tilt Neon', cursive; */
 }
 
+@media only screen and (max-width: 991px) {
+    #banner .me-img, #banner .me-img img{
+        height: 20rem;
+        width: 20rem;
+    }
+}
+@media only screen and (max-width: 500px) {
+    #banner .me-img, #banner .me-img img{
+        height: 12rem;
+        width: 12rem;
+    }
+}
+@media only screen and (max-width: 400px) {
+    #banner .me-img, #banner .me-img img{
+        height: 10rem;
+        width: 10rem;
+    }
+}
+
 /* ----- Utility Classes ----- */
 .animate{
     animation-duration: 1s;
@@ -50,27 +69,33 @@ section{
 }
 
 #banner .background-img, #about .transition-from-img{
-    background-image: url("../images/banner/banner.png");
-    opacity: calc(1.5 - var(--scroll) / 100);
+    background-image: url("../images/banner/background.jpg");
+}
+#banner .blur-load.loaded .background-img, #about .blur-load.loaded .transition-from-img{
+    opacity: calc(1.5 - var(--scroll) / 100) !important;
 }
 
-#about .background-img, #banner .transition-to-img, #skills .transition-from-img{
-    background-image: url("../images/about/background.png");
+#about .background-img, #banner .transition-to-img, #skills .transition-from-img, #contact .transition-from-from-img{
+    background-image: url("../images/about/background.jpg");
 }
 
 #skills .background-img, #about .transition-to-img, #contact .transition-from-img{
-    background-image: url("../images/skills/background.png");
+    background-image: url("../images/skills/background.jpg");
 }
 
 #contact .background-img, #skills .transition-to-img{
-    background-image: url("../images/contact/background.png");
+    background-image: url("../images/contact/background.jpg");
 }
 
-#banner .transition-to-img, #about .background-img, #about .transition-to-img, #skills .transition-from-img, #skills .background-img{
+/* #banner .transition-to-img, #about .background-img, #about .transition-to-img, #skills .transition-from-img, #skills .background-img{
     opacity: 0;
+} */
+
+img.background-img, img.transition-from-img, img.transition-to-img, img.transition-from-from-img, img.background-img img{
+    /* position: fixed; */
 }
 
-.background-img, .transition-from-img, .transition-to-img{
+.background-img, .transition-from-img, .transition-to-img, .transition-from-from-img, .background-img img{
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
@@ -81,6 +106,20 @@ section{
 
 #banner .overlay-img img, #about .overlay-img img, #about .overlay-img2 img, #skills .overlay-img img, #contact .overlay-img img{
     width: 100%;
+}
+
+.blur-load{
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.blur-load.loaded img{
+    opacity: 1 !important;
+}
+.blur-load img{
+    opacity: 0 !important;
 }
 
 ::-webkit-scrollbar {
@@ -118,7 +157,7 @@ section{
 .nav-link, .left-side .nav-link, .navbar.scroll, .navbar .right-side .bi{
     color: #000;
 }
-.navbar .left-side .nav-link{
+.navbar .left-side .nav-link, .navbar .left-side .active{
     border: 1px solid #000;
     transition: color 400ms;
 }
@@ -154,7 +193,9 @@ section{
     background-attachment: fixed; */
     color: #fff;
 }
-#banner{
+#banner .content{
+    position: absolute;
+    top: 0;
     display: grid;
     grid-template-columns: 50% 50%;
 }
@@ -167,11 +208,11 @@ section{
 }
 #banner .left{
     position: sticky;
-    padding: 20rem 6rem;
+    padding: 20rem 0 0 6rem;
     text-align: left;
 }
 #banner .overlay-img{
-    position: absolute;
+    /* position: absolute; */
     right: 0;
     /* opacity: calc(1 - var(--scroll) / 150); */
 }
@@ -380,10 +421,6 @@ section{
     font-size: 3rem;
 }
 
-.FVcOv {
-    max-width: none !important;
-}
-
 /* .Content__WidgetContainer-sc-3sh3bs-2, div.eapps-widget.eapps-widget-show-toolbar:before{
     display: inline-block !important;
 } */
@@ -397,7 +434,7 @@ section{
 } */ 
 
 @media  only screen and (max-width: 1401px)  {
-    #banner{
+    #banner .content{
         display: block;
     }
     #banner .left{
@@ -406,8 +443,7 @@ section{
         padding-top: 10rem;
         padding-bottom: 0;
     }
-    #banner img{
-        width: 20rem;
+    #banner .me-img{
         margin-bottom: 1rem;
     }
     #banner h2{
@@ -454,27 +490,34 @@ section{
     #contact .content, #contact .contacts{
         padding: 0;
     }
-    #contact .eapps-widget{
-        padding: 2rem 2rem 0 2rem;
-    }
 }
 @media only screen and (max-width: 991px) {
-    #banner{
+    /* #banner {
         display: block;
-    }
+    } */
     #banner .left{
         text-align: center;
         display: block;
     }
-    #banner img{
+    #banner .me-img, #banner .me-img img{
+        height: 20rem;
         width: 20rem;
     }
     #banner h2{
         font-size: 3rem;
     }
+
+    #skills .content .skill h3{
+        font-size: 3.5rem;
+    }
+
+    #contact h2{
+        font-size: 5rem;
+    }
 }
 @media only screen and (max-width: 500px) {
-    #banner img{
+    #banner .me-img, #banner .me-img img{
+        height: 12rem;
         width: 12rem;
     }
     #about .content{
@@ -493,19 +536,21 @@ section{
     #about .instagram-media{
         height: 20rem !important;
     }
+
+    #skills .content .skill h3{
+        font-size: 3rem;
+    }
+
+    #contact h2{
+        font-size: 4rem;
+    }
 }
 @media only screen and (max-width: 400px) {
-    #banner img{
+    #banner .me-img, #banner .me-img img{
+        height: 10rem;
         width: 10rem;
     }
     #banner h1{
         font-size: 5rem;
     }
-
-    /* #about h2{
-        padding-left: 0;
-    }
-    #about .img1-text{
-        width: 100%;
-    } */
 }
