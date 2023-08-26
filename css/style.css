@@ -384,7 +384,9 @@ img.background-img, img.transition-from-img, img.transition-to-img, img.transiti
 #contact{
     
 }
-
+#contact .content{
+    padding-bottom: 10rem;
+}
 #contact h2{
     color: #fff;
     position: relative;
@@ -394,7 +396,6 @@ img.background-img, img.transition-from-img, img.transition-to-img, img.transiti
     font-size: 6rem;
     padding: 16rem 0 0 10rem;
 }
-
 #contact .content{
     display: grid;
     grid-template-columns: auto auto;
@@ -402,46 +403,43 @@ img.background-img, img.transition-from-img, img.transition-to-img, img.transiti
     text-align: start;
     color: #fff;
     font-size: 2rem;
-    padding: 4rem 10rem 0 0;
 }
-
 #contact .contacts{
     padding: 3rem 0 0 10rem;
 }
 #contact .content .contact{
     margin: 1rem;
 }
-
 #contact .content .contact img{
     margin-bottom: 1rem;
 }
-
-#contact .content  .contact a{
+#contact .content .contact a{
     color: #fff;
     font-size: 3rem;
 }
-
-/* .Content__WidgetContainer-sc-3sh3bs-2, div.eapps-widget.eapps-widget-show-toolbar:before{
-    display: inline-block !important;
-} */
-/* document.querySelector(".eapps-instagram-feed-posts-item-image-landscape"){ */
-/* .eapps-instagram-feed-posts-item-image-landscape {
-    display: none !important;
+#contact .contact-form{
+    margin: 0 15rem 0 0;
+}
+#contact .contact-form iframe, #contact .contact-form iframe{
+    border-radius: 1rem !important;
+    min-height: 0 !important;
 }
 
-/* .eapps-instagram-feed-container{
-    height: 50rem;
-} */ 
-
 @media  only screen and (max-width: 1401px)  {
+    .content *, #banner .left h1, #banner .left h2, #about h2{
+        opacity: 1 !important;
+    }
+    
     #banner .content{
+        width: 100%;
         display: block;
+        padding: 10rem;
     }
     #banner .left{
         text-align: center;
         display: block;
         padding-top: 10rem;
-        padding-bottom: 0;
+        padding-left: 0;
     }
     #banner .me-img{
         margin-bottom: 1rem;
@@ -449,11 +447,12 @@ img.background-img, img.transition-from-img, img.transition-to-img, img.transiti
     #banner h2{
         font-size: 3rem;
     }
+
+    #contact .contact-form{
+        margin: 3rem 5rem 0 0;
+    }
 }
 @media  only screen and (max-width: 1001px)  {
-    .content *, #banner .left h1, #banner .left h2, #about h2{
-        opacity: 1 !important;
-    }
     #about .content{
         display: block;
     }   
@@ -495,10 +494,6 @@ img.background-img, img.transition-from-img, img.transition-to-img, img.transiti
     /* #banner {
         display: block;
     } */
-    #banner .left{
-        text-align: center;
-        display: block;
-    }
     #banner .me-img, #banner .me-img img{
         height: 20rem;
         width: 20rem;
@@ -510,9 +505,25 @@ img.background-img, img.transition-from-img, img.transition-to-img, img.transiti
     #skills .content .skill h3{
         font-size: 3.5rem;
     }
+    #skills .content #html{
+        margin: 0;
+    }
 
     #contact h2{
+        text-align: center;
         font-size: 5rem;
+    }
+    #contact .contacts{
+        text-align: center;
+        width: 100%;
+    }
+    #contact .content .contact a{
+        font-size: 0;
+    }
+
+    #contact .contact-form{
+        margin: 0;
+        padding: 2rem;
     }
 }
 @media only screen and (max-width: 500px) {
@@ -543,6 +554,9 @@ img.background-img, img.transition-from-img, img.transition-to-img, img.transiti
 
     #contact h2{
         font-size: 4rem;
+    }
+    #contact .contact-form{
+        padding: 1rem;
     }
 }
 @media only screen and (max-width: 400px) {

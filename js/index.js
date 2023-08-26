@@ -5,6 +5,13 @@ window.addEventListener("resize", () => {
     resize();
 });
 
+$("*").on("load", () => {
+    // let interval = setInterval(() => {
+    resize()
+    // }, 1000)
+    // alert()
+})
+
 function setScrollVar() {
     const htmlElement = document.documentElement;
     const percentOfScreenHeightScroll = htmlElement.scrollTop / htmlElement.clientHeight;
@@ -27,7 +34,7 @@ function setScrollVar() {
     if ($("#banner .transition-to-img").css("opacity") == 1){
         $("#about .background-img").css({height: $("#about").css("height"), opacity: 1 - (1 - (value / 100 - 1)) * -1});
         $("#skills .transition-from-img").css({height: $("#skills").css("height"), opacity: 1 - (1 - (value / 100 - 1)) * -1});
-        $("#contact .transition-from-from-img").css({height: $("#contact").css("height"), opacity: $("#about").css("opacity")});
+        $("#contact .transition-from-from-img").css({height: $("#contact").css("height"), opacity: 1 - (1 - (value / 100 - 1)) * -1});
     }
 
     if($("#about .background-img").css("opacity") < 1){
@@ -69,20 +76,22 @@ function setScrollVar() {
     //     $("#skills .transition-to-img").css("height",  $("#skills").css("height"));
     // }
     
-    $("#contact .overlay-img img").css("height") > $("#contact").css("height") ? $("#contact").css("height", $("#contact .overlay-img img").css("height")) : $("#contact").css("height");
+    // $("#contact .overlay-img img").css("height") > $("#contact").css("height") ? $("#contact").css("height", $("#contact .overlay-img img").css("height")) : $("#contact").css("height");
 }
 setScrollVar();
 
 resize();
 
 function resize() {
-    console.log("resize");
     // $("#banner .background-img").css("height", $("#banner").css("height"));
     // $("#banner .background-img").css("height", $("#banner").css("height"));
-    $("#banner").css("height", $("#banner").css("height"));
+    // console.log($("#banner .overlay-img img").css("height"));
+    // console.log($("#banner .overlay-img img").css("height"));
+    // $("#banner .overlay-img img").css("height") == 0 ? $("#banner").css("height", $("#banner .content").css("height")) : console.log($("#banner .overlay-img img").css("height"));
+    parseInt($("#banner .overlay-img img").css("height")) === 0 ? $("#banner").css("height", $("#banner .content").css("height")) : console.log();
     $("#banner .background-blur").css("height", $("#banner").css("height"));
     $("#banner .transition-to-img").css("height", $("#banner").css("height"));
-    $("#banner .overlay-img img").css("height", $("#banner .overlay-img img").css("height"));
+    // $("#banner .overlay-img img").css("height", $("#banner .overlay-img img").css("height"));
     // $("#banner .overlay-img img").css("height", $("#banner .background-img").css("height"));
 
     // $("#about").css("height", $("#about").css("height"));
@@ -91,8 +100,10 @@ function resize() {
     $("#about .transition-from-blur").css("height", $("#about").css("height"));
     $("#about .background-img").css("height", $("#about .overlay-img img").css("height"));
     
-    $("#skills").css("height", $("#skills").css("height"));
+    parseInt($("#skills .overlay-img img").css("height")) === 0 ? console.log() : $("#skills").css("height", parseFloat($("#skills h2").css("height")) + parseFloat($("#skills .content").css("height")));
     $("#skills .overlay-img img").css("height", $("#skills").css("height"));
+    $("#skills ").css("height", $("#skills").css("height"));
+    
 
     // $("#contact .overlay-img img").css("height", $("#contact"));
     // $("#about .transition-from-blur").css("height", $("#about").css("height"));
@@ -103,11 +114,20 @@ function resize() {
     // $("#about .overlay-img img").css("height", $("#about").css("height"));
     // $("#about .transition-from-blur").css("height", parseInt($("#about h2").css("height")) + parseInt($("#about .content").css("height")));
 
+    // parseInt($("#contact .overlay-img img").css("height")) != 0 && parseInt($("#contact .overlay-img img").css("height")) < parseInt($("#contact").css("height")) ? $("#contact .overlay-img img").css("height", $("#contact").css("height")) : console.log();
+    // console.log(parseInt($("#contact .overlay-img img").css("height")));
+    parseInt($("#contact .overlay-img img").css("height")) != 0 && parseInt($("#contact .overlay-img img").css("height")) > parseInt($("#contact").css("height"))? $("#contact").css("height", $("#contact .overlay-img img").css("height")) : $("#contact .overlay-img img").css("height", $("#contact").css("height"));
+    // parseInt($("#contact .overlay-img img").css("height")) != 0 && parseInt($("#contact .overlay-img img").css("height")) > parseInt($("#contact").css("height")) ? console.log("true") : console.log("false");
+    // $("#contact .overlay-blured").css("height", $("#contact .overlay-img img").css("height"))
+    // $("#contact .overlay-blured").css("height", $("#contact").css("height"))
+    // $("#contact .overlay-img img").css("height", $("#contact").css("height"))
+    // add blur
     // $("#skills .overlay-img img").css("height",  $("#skills").css("height"));
     // $("#contact").css("height", parseInt($("#skills").css("height")));
     // $("#contact .overlay-img img").css("height", $("#contact").css("height"));
     // $("#contact .background-img").css("height", $("#contact").css("height"));
     // $("#contact .transition-from-img").css("height", $("#contact").css("height"));
+    // $("#contact iframe")
 }
 
 const blurDivs = document.querySelectorAll(".blur-load");
