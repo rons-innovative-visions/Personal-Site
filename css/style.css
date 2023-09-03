@@ -204,7 +204,7 @@ img.background-img, img.transition-from-img, img.transition-to-img, img.transiti
     padding-top: 6rem;
     padding-left: 0;
     text-align: start;
-    opacity: calc(1 - var(--scroll) / 15);
+    /* opacity: calc(1 - var(--scroll) / 15); */
 }
 #banner .left{
     position: sticky;
@@ -220,7 +220,7 @@ img.background-img, img.transition-from-img, img.transition-to-img, img.transiti
     text-transform: capitalize;
     font-size: 7rem;
     margin: 0;
-    opacity: calc(1 - var(--scroll) / 45);
+    /* opacity: calc(1 - var(--scroll) / 45); */
 }
 #banner h1 span{
     letter-spacing: .6rem;
@@ -229,13 +229,13 @@ img.background-img, img.transition-from-img, img.transition-to-img, img.transiti
 #banner h2{
     font-size: 5rem;
     margin: 0;
-    opacity: calc(1 - var(--scroll) / 35);
+    /* opacity: calc(1 - var(--scroll) / 35); */
 }
 #banner p{
     color: #cfcfcf;
     font-size: 2rem;
     margin: 0;
-    opacity: calc(1 - var(--scroll) / 55);
+    /* opacity: calc(1 - var(--scroll) / 55); */
 }
 #banner .skills{
     word-spacing: .8rem;
@@ -255,7 +255,7 @@ img.background-img, img.transition-from-img, img.transition-to-img, img.transiti
     padding: 5rem 0 2rem 6rem;
     font-size: 6rem;
     text-align: start;
-    opacity: calc(0 + var(--scroll) / 100);
+    /* opacity: calc(0 + var(--scroll) / 100); */
 }
 #about .content{
     display: grid;
@@ -263,7 +263,7 @@ img.background-img, img.transition-from-img, img.transition-to-img, img.transiti
     row-gap: 2rem;
     text-align: start;
 }
-#about .content .img1-link, #about .content iframe{
+#about .content .img1-link, #about .content .img2-link{
     translate: -100% 0;
     translate: calc(-100% + 1% * min(var(--scroll), 100)) 0;
 }
@@ -271,39 +271,28 @@ img.background-img, img.transition-from-img, img.transition-to-img, img.transiti
     position: relative;
     grid-column: 1 / span 3;
 }
-#about .content .img1:hover{
+#about .content .img1:hover, #about .content .img2:hover{
     cursor: pointer;
     transform: scale(1.05);
 }
-#about .content .img1{
+#about .content .img1, #about .content .img2{
     width: 100%;
-    opacity: calc(2 - var(--scroll) / 100);
     transition: 300ms;
 }
-#about .img2-link{
-    grid-area: 2 / 2 / span 2 / span 3 ;
-}
-#about .content .img2-link {
-    opacity: calc(2 - var(--scroll) / 140);
-}
-#about .instagram-media{
-    transition: 300ms;
-    border-radius: 3rem !important;
+#about .content .img2-link{
     position: relative;
-}
-#about .instagram-media:hover{
-    transform: scale(1.05) !important;
+    grid-area: 2 / 2 / span 2 / span 3 ;
 }
 #about .img1-text{
     position: relative;
     max-width: 90%;
     grid-column: 4 / span 3;
-    opacity: calc((0 + var(--scroll) / 100));
+    /* opacity: calc((0 + var(--scroll) / 100)); */
 }
 #about .img2-text{
     position: relative;
     grid-column: 5 / span 2;
-    opacity: calc((0 + var(--scroll) / 200));
+    /* opacity: calc((0 + var(--scroll) / 200)); */
 }
 #about .content h3{
     font-size: 4rem;
@@ -312,10 +301,13 @@ img.background-img, img.transition-from-img, img.transition-to-img, img.transiti
     font-size: 1.6rem;
 }
 #about .content .img1-text h3, #about .content .img1-text p{
-    opacity: calc(2 - var(--scroll) / 100);
+    /* opacity: calc(2 - var(--scroll) / 100); */
 }
 #about .content .img2-text h3, #about .content .img2-text p{
-    opacity: calc(2 - var(--scroll) / 140);
+    /* opacity: calc(2 - var(--scroll) / 140); */
+}
+#about .img1-text .shorter, #about .img2-text .shorter{
+    display: none;
 }
 
 #skills{
@@ -424,12 +416,83 @@ img.background-img, img.transition-from-img, img.transition-to-img, img.transiti
     border-radius: 1rem !important;
     min-height: 0 !important;
 }
+@media  only screen and (min-width: 1000px)  {
+    .overlay-img img{
+        display: block !important;
+    }
+}
+@media  only screen and (max-width: 1600px)  {
+    #banner h2{
+        font-size: 4rem;
+    }
+    #banner h1{
+        font-size: 6rem;
+    }
+    #banner h1 span{
+        font-size: 2.5rem;
+    }
+    #banner .skills, #banner p{
+        font-size: 1.4rem;
+    }
+    #banner .right{
+        padding-left: 4rem;
+    }
+    #banner .content{
+        padding-top: 2rem;
+    }
+    #banner .left{
+        padding: 16rem 0 0 3rem;
+    }
+}
+@media  only screen and (max-width: 1400px)  {
+    #banner .right{
+        padding-top: 6rem;
+    }
+    #contact .contact-form{
+        margin: 3rem 5rem 0 0;
+    }
 
-@media  only screen and (max-width: 1401px)  {
-    .content *, #banner .left h1, #banner .left h2, #about h2{
-        opacity: 1 !important;
+    #about .img1-text p, #about .img2-text p{
+        display: none;
+    }
+    #about .img1-text .shorter, #about .img2-text .shorter{
+        display: block;
+    }
+    #about .content p{
+        font-size: 1.4rem;
+    }
+}
+@media  only screen and (max-width: 1200px)  {
+    #banner h2{
+        font-size: 2.8rem;
+    }
+    #banner h1{
+        font-size: 4rem;
+    }
+    #banner h1 span{
+        font-size: 1.6rem;
+    }
+    #banner .skills, #banner p{
+        font-size: 1rem;
+    }
+    /* #banner .right{
+        padding-top: 12rem;
+    } */
+    #contact .contact-form{
+        margin: 3rem 5rem 0 0;
+    }
+    #banner .left{
+        padding: 12rem 0 0 3rem;
+    }
+}
+@media  only screen and (max-width: 1000px)  {
+    .navbar .navbar-collapse .right-side{
+        padding-top: 1rem;
     }
     
+    #banner h2{
+        font-size: 3rem;
+    }
     #banner .content{
         width: 100%;
         display: block;
@@ -438,29 +501,33 @@ img.background-img, img.transition-from-img, img.transition-to-img, img.transiti
     #banner .left{
         text-align: center;
         display: block;
-        padding-top: 10rem;
+        padding: 0;
         padding-left: 0;
+    }
+    #banner .me-img, #banner .me-img img{
+        height: 20rem;
+        width: 20rem;
     }
     #banner .me-img{
         margin-bottom: 1rem;
     }
-    #banner h2{
-        font-size: 3rem;
-    }
-
-    #contact .contact-form{
-        margin: 3rem 5rem 0 0;
-    }
-}
-@media  only screen and (max-width: 1001px)  {
+    
     #about .content{
         display: block;
-    }   
-    #about .content{
         text-align: center;
     }   
+
     #about .img1-text{
         max-width: 100%; 
+    }
+    #about .content .img1-text h3, #about .content .img2-text h3{
+        margin: 1rem 0 0 0;
+    }
+    #about .content .img1-text .shorter, #about .content .img2-text .shorter{
+        padding: 0 1rem 1rem 1rem;
+    }
+    #about .content .img1-text{
+        margin: 1rem 0 0 0;
     }
     #about .content iframe{
         display: inline !important;
@@ -475,67 +542,93 @@ img.background-img, img.transition-from-img, img.transition-to-img, img.transiti
         display: block;
         padding-top: 2rem;
     }
+    #skills .content #html{
+        margin: 0;
+    }
+    #skills .content .skill h3{
+        font-size: 3.5rem;
+    }
 
     #contact h2 {
+        text-align: center;
+        font-size: 5rem;
         padding: 5rem 0 2.5rem 0;
     }
     #contact .content{
         display: block;
+        text-align: center;
     }
     #contact .contact{
         display: inline-block;
-        text-align: center;
     }
     #contact .content, #contact .contacts{
         padding: 0;
-    }
-}
-@media only screen and (max-width: 991px) {
-    /* #banner {
-        display: block;
-    } */
-    #banner .me-img, #banner .me-img img{
-        height: 20rem;
-        width: 20rem;
-    }
-    #banner h2{
-        font-size: 3rem;
-    }
-
-    #skills .content .skill h3{
-        font-size: 3.5rem;
-    }
-    #skills .content #html{
-        margin: 0;
-    }
-
-    #contact h2{
-        text-align: center;
-        font-size: 5rem;
-    }
-    #contact .contacts{
         text-align: center;
         width: 100%;
     }
     #contact .content .contact a{
         font-size: 0;
     }
-
     #contact .contact-form{
         margin: 0;
         padding: 2rem;
     }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
+    #banner .content{
+        padding: 0;
+    }
+    #banner .left{
+        padding: 10rem 0 0 0;
+    }
     #banner .me-img, #banner .me-img img{
         height: 12rem;
         width: 12rem;
     }
+    
     #about .content{
         display: block;
         text-align: center;
     }
+    #about h2{
+        text-align: center;
+        font-size: 4rem;
+        padding-left: 0;
+    }
+    #about .content h3{
+        font-size: 3rem;
+    }    
+    #about .instagram-media{
+        height: 20rem !important;
+    }
 
+    #skills .content .skill h3{
+        font-size: 3rem;
+    }
+
+    #contact h2{
+        font-size: 4rem;
+    }
+    #contact .contact-form{
+        padding: 1rem;
+    }
+}
+@media only screen and (max-width: 501px) {
+    #banner .content{
+        padding: 0;
+    }
+    #banner .left{
+        padding: 10rem 0 0 0;
+    }
+    #banner .me-img, #banner .me-img img{
+        height: 12rem;
+        width: 12rem;
+    }
+    
+    #about .content{
+        display: block;
+        text-align: center;
+    }
     #about h2{
         text-align: center;
         font-size: 4rem;

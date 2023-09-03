@@ -1,15 +1,10 @@
 window.addEventListener("scroll", setScrollVar);
 window.addEventListener("resize", () => {
-    // window.location.reload();
-    // setScrollVar();
     resize();
 });
 
 $("*").on("load", () => {
-    // let interval = setInterval(() => {
     resize()
-    // }, 1000)
-    // alert()
 })
 
 function setScrollVar() {
@@ -46,6 +41,7 @@ function setScrollVar() {
     } 
     if ($("#about .transition-to-img").css("opacity") == 1){
         $("#skills .background-img").css({height: $("#skills").css("height"), opacity: 3 - (1 - (value / 100 - 1)) * -1});
+        $("#about .transition-to-img").css({height: $("#about").css("height"), opacity: 3 - (1 - (value / 100 - 1)) * -1});
         $("#contact .transition-from-img").css({height: $("#contact").css("height"), opacity: $("#skills .background-img").css("opacity")});
         // alert()
     }
@@ -57,6 +53,7 @@ function setScrollVar() {
         // $("#contact .transition-from-img").css({height: $("#contact .transition-from-img").css("height"),  opacity: $("#about .transition-to-img").css("opacity")});
         // $("#skills .transition-from-img").css({height: $("#skills .transition-to-img").css("height"), opacity: $("#banner .transition-to-img").css("opacity")});
     } 
+    $("#about .transition-from-blur").css("opacity", $("#about").css("height")); //WORK ON THIS
     // if ($("#skills .transition-to-img").css("opacity") == 1){
     //     $("#contact .background-img").css({height: $("#skills .background-img").css("height"), opacity: 3 - (1 - (value / 100 - 1)) * -1});
     //     $("#contact .transition-from-img").css({height: $("#contact .transition-from-img").css("height"), opacity: $("#skills .background-img").css("opacity")});
@@ -88,19 +85,26 @@ function resize() {
     // console.log($("#banner .overlay-img img").css("height"));
     // console.log($("#banner .overlay-img img").css("height"));
     // $("#banner .overlay-img img").css("height") == 0 ? $("#banner").css("height", $("#banner .content").css("height")) : console.log($("#banner .overlay-img img").css("height"));
-    parseInt($("#banner .overlay-img img").css("height")) === 0 ? $("#banner").css("height", $("#banner .content").css("height")) : console.log();
+    // window.innerWidth >= 1001 ? $("#banner").css("height", $("#contact .overlay-img img").css("height")) : $("#banner .overlay-img img").css("height", $("#contact").css("height"));
+    if(parseInt($("#banner .overlay-img img").css("height")) === 0 ){
+        $("#banner").css("height", $("#banner .content").css("height"));
+    } else{
+
+    }
+    // parseInt($("#banner .overlay-img img").css("height")) != 0 && parseInt($("#banner .overlay-img img").css("height")) > parseInt($("#banner").css("height")) ? $("#banner").css("height", $("#contact .overlay-img img").css("height")) : $("#banner .overlay-img img").css("height", $("#contact").css("height"));
+    // parseInt($("#banner .overlay-img img").css("height")) != 0 && parseInt($("#banner .overlay-img img").css("height")) > parseInt($("#banner").css("height")) ? $("#banner").css("height", $("#contact .overlay-img img").css("height")) : alert()
     $("#banner .background-blur").css("height", $("#banner").css("height"));
     $("#banner .transition-to-img").css("height", $("#banner").css("height"));
     // $("#banner .overlay-img img").css("height", $("#banner .overlay-img img").css("height"));
     // $("#banner .overlay-img img").css("height", $("#banner .background-img").css("height"));
 
-    // $("#about").css("height", $("#about").css("height"));
+    $("#about").css("height", $("#about").css("height"));
     // $("#about .overlay-img img").css("height", $("#about").css("height"));
     $("#about .overlay-img img").css("height", $("#about").css("height"));
     $("#about .transition-from-blur").css("height", $("#about").css("height"));
     $("#about .background-img").css("height", $("#about .overlay-img img").css("height"));
     
-    parseInt($("#skills .overlay-img img").css("height")) === 0 ? console.log() : $("#skills").css("height", parseFloat($("#skills h2").css("height")) + parseFloat($("#skills .content").css("height")));
+    parseInt($("#skills .overlay-img img").css("height")) === 0 ? console.log("abc") : $("#skills").css("height", parseFloat($("#skills h2").css("height")) + parseFloat($("#skills .content").css("height")));
     $("#skills .overlay-img img").css("height", $("#skills").css("height"));
     $("#skills ").css("height", $("#skills").css("height"));
     
